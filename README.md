@@ -33,7 +33,7 @@ Example
 
 `python extract_streams.py sample.pcap microsofto365.com`
 
-<p align="center">
+<p align="left">
   <img src="img/dns_decoder.png">
 </p>
 
