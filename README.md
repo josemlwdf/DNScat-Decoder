@@ -33,7 +33,9 @@ Example
 
 `python extract_streams.py sample.pcap microsofto365.com`
 
-![ImageAltText]("https://github.com/josemlwdf/DNScat-Decoder/blob/main/img/dns_decoder.png")
+<p align="center">
+  <img src="img/dns_decoder.png" alt="pyrat josemlwdf" width="300" height="300">
+</p>
 
 Functionality
 
