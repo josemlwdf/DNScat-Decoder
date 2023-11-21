@@ -24,9 +24,11 @@ Running the Script
 
 To run the script, execute it from the command line:
 
-`python dnscat_decoder.py path_to_pcap_file bad_domain
-path_to_pcap_file: Path to the input PCAP file.
-bad_domain: Domain used by dnscat. For example: "microsofto365.com"`
+`python dnscat_decoder.py path_to_pcap_file bad_domain`
+
+`path_to_pcap_file: Path to the input PCAP file.`
+
+`bad_domain: Domain used by dnscat. For example: "microsofto365.com"`
 
 Example
 
