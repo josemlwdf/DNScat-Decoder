@@ -15,38 +15,23 @@ Installation
 Before using the script, ensure that tshark is installed on your system. If not, the script provides instructions for installation based on the operating system.
 Install tshark
 
-    Linux: Install tshark using apt-get by running:
+Linux Install tshark using apt-get by running:
 
-    bash
-
-sudo apt-get install -y tshark
-
-macOS: Install tshark using brew by running:
-
-bash
-
-    brew install wireshark
-
-    Windows: Download Wireshark from Wireshark Official Website and install it manually.
+`sudo apt-get install -y tshark`
 
 Usage
 Running the Script
 
 To run the script, execute it from the command line:
 
-bash
-
-python script_name.py path_to_pcap_file bad_domain
+    python dnscat_decoder.py path_to_pcap_file bad_domain
 
     path_to_pcap_file: Path to the input PCAP file.
     bad_domain: Domain used by dnscat. For example: "microsofto365.com"
 
-Replace script_name.py with the actual name of your Python script.
 Example
 
-bash
-
-python extract_streams.py sample.pcap microsofto365.com
+`python extract_streams.py sample.pcap microsofto365.com`
 
 ![ImageAltText]("https://github.com/josemlwdf/DNScat-Decoder/blob/main/img/dns_decoder.png")
 
