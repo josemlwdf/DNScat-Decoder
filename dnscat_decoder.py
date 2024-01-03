@@ -32,15 +32,15 @@ def check_tshark_installed():
             print("Installation aborted.")
 
 
-def extract_tcp_streams_from_pcap(pcap_file):
+def extract_tcp_streams_from_pcap(pcap_file, bad_domain):
     raw_data = os.popen('tshark -r '+ pcap_file + ' -Tfields -e dns.qry.name').read()
 
     extracted_data = ''
     for packet in raw_data.splitlines():  # Splitting raw_data into lines
-        result = re.findall('([a-z0-9\.]+)\.microsofto365.com', packet)
+        result = re.findall('([a-z0-9\.]+)\.' + bad_domain, packet)
 
         if result:
-            bytes_data = binascii.unhexlify(result[0].replace('.microsofto365.com', '').replace('.', ''))
+            bytes_data = binascii.unhexlify(result[0].replace('.' + bad_domain, '').replace('.', ''))
             packet_data = bytes_data[9:]
 
             try:
@@ -61,12 +61,14 @@ def extract_tcp_streams_from_pcap(pcap_file):
 def main():
     parser = argparse.ArgumentParser(description='Extract TCP streams from a pcap file.')
     parser.add_argument('file', help='Path to the input pcap file')
+    parser.add_argument('domain', help='Domain used by dnscat')
     args = parser.parse_args()
     pcap_file = args.file
+    bad_domain = args.domain
 
     check_tshark_installed()
 
-    extracted_data = extract_tcp_streams_from_pcap(pcap_file)
+    extracted_data = extract_tcp_streams_from_pcap(pcap_file, bad_domain)
 
 
 if __name__ == "__main__":

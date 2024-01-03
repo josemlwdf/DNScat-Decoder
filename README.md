@@ -32,7 +32,7 @@ To run the script, execute it from the command line:
 
 Example
 
-    python3 extract_streams.py sample.pcap "microsofto365.com"
+    python3 dnscat_decoder.py sample.pcap "microsofto365.com"
 
 <p align="left">
   <img src="img/dns_decoder.png">
