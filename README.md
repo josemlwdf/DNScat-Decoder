@@ -2,15 +2,17 @@
 TCP Stream Extractor from PCAP using Python
 
 This Python script extracts TCP streams from a Packet Capture (PCAP) file by filtering DNS queries for a specified "bad" domain.
-Overview
+
+## Overview
 
 The script uses the tshark tool to read a PCAP file, extracting DNS query names, and filters packets based on a specified "bad" domain. It decodes relevant packet data and extracts TCP streams associated with the provided domain.
-Prerequisites
+
+## Prerequisites
 
 `Python 3.x
 tshark (Wireshark command-line tool)`
 
-Installation
+## Installation
 
 Before using the script, ensure that tshark is installed on your system. If not, the script provides instructions for installation based on the operating system.
 Install tshark
@@ -19,7 +21,7 @@ Linux Install tshark using apt-get by running:
 
     sudo apt-get install -y tshark
 
-Usage
+## Usage
 Running the Script
 
 To run the script, execute it from the command line:
@@ -30,7 +32,7 @@ To run the script, execute it from the command line:
 
 `bad_domain: Domain used by dnscat. For example: "microsofto365.com"`
 
-Example
+### Example
 
     python3 dnscat_decoder.py sample.pcap "microsofto365.com"
 
@@ -38,15 +40,16 @@ Example
   <img src="img/dns_decoder.png">
 </p>
 
-Functionality
+## Functionality
 
 `The script extracts TCP streams from the provided PCAP file associated with the specified "bad" domain.
 It decodes packet data and ensures extracted data meets minimum length criteria.
 The extracted TCP streams are displayed on the console and can be further processed as needed within the script.`
 
-Contributions
+## Contributions
 
 Contributions and improvements to the script are welcome! Feel free to fork the repository and submit pull requests.
-License
+
+## License
 
 This script is licensed under the MIT License.
